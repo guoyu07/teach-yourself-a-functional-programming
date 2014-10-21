@@ -1,30 +1,35 @@
 object Functions {
 
     // adds two integers together
-    def plus(x: Int, y:Int):Int = ???
+    def plus(x: Int, y:Int):Int = x + y
     
     // salutes the given name, e.g. Hello, User
-    def salutation(name: String):String = ???
+    def salutation(name: String):String = "Hello, " + name
 
     // counts the number of characters in a given string
-    def characters(name: String):Int = ???
+    def characters(name: String):Int = name.size
 
+<<<<<<< Updated upstream
     // returns the base x to the power y, i.e. x^y
     def pow(x: Int, y: Int) = ???
+=======
+    // returns x^y
+    def pow(x: Int, y: Int) = math.pow(x,y)
+>>>>>>> Stashed changes
 
     /** Salutes the user according to the time of day given in isDayTime
       * During daytime, salutes with "Hello". During nighttime, salutes with "Good night"
       */
-    def dayOrNightSalutation(name:String, isDayTime: Boolean) = ???
+    def dayOrNightSalutation(name:String, isDayTime: Boolean) = if (isDayTime) ("Hello, "+name) else ("Good night, " + name)
 
     // return first two names in a given list
-    def firstTwo(names: List[String]) = ???
+    def firstTwo(names: List[String]) = names.take(2)
 
     // return the last name in a given list
-    def lastName(names: List[String]) = ???
+    def lastName(names: List[String]) = names.last
 
     // combines two lists
-    def combine(names: List[String], letters: List[String]) = ???
+    def combine(names: List[String], letters: List[String]) = names++letters
 
 
 

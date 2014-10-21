@@ -1,39 +1,39 @@
 object Functions {
 
     // convert a string to upper case, e.g. John => JOHN
-    def upper(s:String) = ???
+    def upper(s:String) = s.toUpperCase()
 
     // convert a list of strings to list of upper case strings
-    def listToUpper(list:List[String]) = ???
+    def listToUpper(list:List[String]) = list.map(x=>x.toUpperCase())
 
 
     // return the length of a string
-    def length(str: String):Int = ???
+    def length(str: String):Int = str.length()
 
     // filter names that are less than four characters long
-    def filterShortNames(names:List[String]) = ???
+    def filterShortNames(names:List[String]) = names.filter(x=>x.length()>3)
 
     // filter names that are less than four characters long
     // and turn remaining names to uppercase
-    def filterShortAndTurnToUppercase(names:List[String]) = ???
+    def filterShortAndTurnToUppercase(names:List[String]) = names.filter(x=>x.length()>3).map(x=>x.toUpperCase())
 
 
     // turn a string to a list of characters
-    def characters(str: String):List[Char] = ???
+    def characters(str: String):List[Char] = str.toList
 
     // turn a list of strings to a list of list of characters
-    def toCharacterLists(list:List[String]):List[List[Char]] = ???
+    def toCharacterLists(list:List[String]):List[List[Char]] = list.map(x=>x.toList)
 
     // turn a list of strings to a list of characters
-    def listOfAllCharacters(list:List[String]):List[Char] = ???
+    def listOfAllCharacters(list:List[String]):List[Char] = list.map(x=>x.toList).reduce((x,xs)=>x++xs)
 
 
     // return the first string in a list, or if list is empty, return "nada"
-    def firstElementInListOrNada(list:List[String]) = ???
+    def firstElementInListOrNada(list:List[String]) = if (list.isEmpty) "nada" else list.head
 
     // find the longest string in given list of strings, or "nada" if empty
     // and reverse the result before returning it
-    def longestNameInList(names:List[String]) = ???
+    def longestNameInList(names:List[String]) = (if (names.isEmpty) "nada" else names.reduce((x,xs)=>if(xs.length()>x.length()) xs else x)).reverse
 
     // Join list `xs` of string with separator string `sep` into a string
     def joinWithSep(xs: List[String], sep: String): String = ???
