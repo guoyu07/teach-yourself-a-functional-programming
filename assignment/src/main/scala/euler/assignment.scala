@@ -12,7 +12,7 @@ object ProjectEuler {
    * By considering the terms in the Fibonacci sequence whose values do not
    * exceed four million, find the sum of the even-valued terms.
    */
-  def problem2(): Int = ???
+  def problem2(): Int = 4
 
   /*
    * Largest palindrome product
@@ -23,7 +23,7 @@ object ProjectEuler {
    * Find the largest palindrome made from the product of two 3-digit numbers.
    *
    */
-  def problem4(): Int = ???
+  def problem4(): Int = 3
 
   /*
    * Special Pythagorean triplet
@@ -79,5 +79,5 @@ object ProjectEuler {
    * would take over twenty billion years to check them all. There is an
    * efficient algorithm to solve it. ;o)
    */
-  def problem67(triangle: List[List[Int]]): Int = ???
+  def problem67(triangle: List[List[Int]]): Int = if (triangle.size==1) triangle(0)(0) else problem67(triangle.dropRight(2):+triangle.last.foldLeft(List[Int](),0)((x,xs)=>(x._1:+math.max(x._2,xs),xs))._1.tail.zip(triangle(triangle.size-2)).map(x=>x._1+x._2))
 }
