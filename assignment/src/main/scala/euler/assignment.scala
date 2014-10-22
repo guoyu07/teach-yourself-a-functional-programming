@@ -55,7 +55,7 @@ object ProjectEuler {
    * Find the maximum total from top to bottom of the given triangle with 15
    * rows:
    */
-  def problem18(triangle: List[List[Int]]): Int = ???
+  def problem18(triangle: List[List[Int]]): Int = if (triangle.size==1) triangle(0)(0) else problem67(triangle.dropRight(2):+triangle.last.foldLeft(List[Int](),0)((x,xs)=>(x._1:+math.max(x._2,xs),xs))._1.tail.zip(triangle(triangle.size-2)).map(x=>x._1+x._2))
 
   /*
    * Maximum path sum II
