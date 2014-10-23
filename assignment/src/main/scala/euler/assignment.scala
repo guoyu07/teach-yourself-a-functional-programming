@@ -12,7 +12,7 @@ object ProjectEuler {
    * By considering the terms in the Fibonacci sequence whose values do not
    * exceed four million, find the sum of the even-valued terms.
    */
-  def problem2(): Int = 4
+  def problem2(): Int = List.range(1,4000001).foldLeft(List[Int](),0,1)((x,xs)=>if (xs==x._2+x._3) (x._1:+xs,x._3,xs) else x)._1.foldLeft(0)((x,xs)=>if(xs%2==0) x+xs else x)
 
   /*
    * Largest palindrome product
@@ -23,7 +23,7 @@ object ProjectEuler {
    * Find the largest palindrome made from the product of two 3-digit numbers.
    *
    */
-  def problem4(): Int = 3
+  def problem4(): Int = List.range(100,1000).flatMap(x=> List.range(100,1000).map(y=>(x,y))).filter(x=>x._1<=x._2).map(x=>x._1*x._2).filter(x=>x.toString.equals(x.toString.reverse)).max
 
   /*
    * Special Pythagorean triplet
@@ -36,7 +36,7 @@ object ProjectEuler {
    * There exists exactly one Pythagorean triplet for which a + b + c = 1000.
    * Find the product abc.
    */
-  def problem9(): Int = ???
+  def problem9(): Int = List.range(1,1001).flatMap(x=> List.range(1,1001).map(y=> (x,y))).filter(x=>x._1<x._2).filter(x=>x._1*x._1+x._2*x._2==(1000-x._1-x._2)*(1000-x._1-x._2))(0)._1*List.range(1,1001).flatMap(x=> List.range(1,1001).map(y=> (x,y))).filter(x=>x._1<x._2).filter(x=>x._1*x._1+x._2*x._2==(1000-x._1-x._2)*(1000-x._1-x._2))(0)._2*(1000-List.range(1,1001).flatMap(x=> List.range(1,1001).map(y=> (x,y))).filter(x=>x._1<x._2).filter(x=>x._1*x._1+x._2*x._2==(1000-x._1-x._2)*(1000-x._1-x._2))(0)._1-List.range(1,1001).flatMap(x=> List.range(1,1001).map(y=> (x,y))).filter(x=>x._1<x._2).filter(x=>x._1*x._1+x._2*x._2==(1000-x._1-x._2)*(1000-x._1-x._2))(0)._2)
 
 
   /*
